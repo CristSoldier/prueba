@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relojs",
+  "info": {
+    "singularName": "reloj",
+    "pluralName": "relojs",
+    "displayName": "Reloj",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "plataforma": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::plataforma.plataforma"
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "descuento": {
+      "type": "integer",
+      "required": false
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "video": {
+      "type": "string",
+      "required": false
+    },
+    "portada": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "fondo_pantalla": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "carrusel_imagenes": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

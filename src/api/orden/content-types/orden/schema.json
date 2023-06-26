@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ordens",
+  "info": {
+    "singularName": "orden",
+    "pluralName": "ordens",
+    "displayName": "Orden",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "pagoTotal": {
+      "type": "decimal",
+      "required": true
+    },
+    "idPago": {
+      "type": "string",
+      "required": false
+    },
+    "direccionEnvio": {
+      "type": "json",
+      "required": true
+    },
+    "productos": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
